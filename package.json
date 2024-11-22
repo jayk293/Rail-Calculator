@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "deploy": "gh-pages -d build -t true"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.5",
+    "@sveltejs/kit": "^2.7.1",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "gh-pages": "^6.2.0",
+    "svelte": "^5.0.2",
+    "vite": "^5.4.9"
+  }
+}
