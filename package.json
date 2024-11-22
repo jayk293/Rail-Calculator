@@ -10,15 +10,15 @@
   },
   "devDependencies": {
     "@smui/button": "^7.0.0",
-		"@smui/card": "^7.0.0",
-		"@smui/tab": "^7.0.0",
-		"@smui/tab-bar": "^7.0.0",
-		"@smui/textfield": "^7.0.0",
-    "@sveltejs/adapter-static": "^3.0.5",
+    "@smui/card": "^7.0.0",
+    "@smui/tab": "^7.0.0",
+    "@smui/tab-bar": "^7.0.0",
+    "@smui/textfield": "^7.0.0",
+    "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.30.3",
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
     "gh-pages": "^6.2.0",
-		"svelte": "^3.57.0",
-		"vite": "^4.0.0"
+    "svelte": "^3.57.0",
+    "vite": "^4.0.0"
   }
 }

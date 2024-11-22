@@ -8,7 +8,7 @@
 		href="https://cdn.jsdelivr.net/npm/svelte-material-ui@7.0.0/bare.min.css"
 	/>
 
-	<h1> Ali Grice's Big Head</h1>
+	<h1> Ali Grice's Rail Calculator</h1>
 	<div class="example">
 		<Counter />	
 	</div>
