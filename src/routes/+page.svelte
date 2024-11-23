@@ -1,5 +1,5 @@
 <script>
-	import Counter from '$lib/App.svelte';
+	import App from '$lib/App.svelte';
 </script>
 
 <main>
@@ -10,7 +10,7 @@
 
 	<h1>Ali Grice's Rail Calculator</h1>
 	<div class="example">
-		<Counter />	
+		<App />	
 	</div>
 </main>
 
