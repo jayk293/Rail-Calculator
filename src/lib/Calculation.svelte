@@ -2,8 +2,15 @@
     import Textfield from '@smui/textfield';
 	import { onMount } from 'svelte';
 
-    export let value1 = 0;
-    export let value2 = 0;
+  /**
+   * @typedef {Object} Props
+   * @property {number} [value1]
+   * @property {number} [value2]
+   * @property {import('svelte').Snippet<[any]>} [children]
+   */
+
+  /** @type {Props} */
+  let { value1 = $bindable(0), value2 = $bindable(0), children } = $props();
 
     function handleChange1(event) {
         const newValue = event.target.value;
@@ -83,4 +90,4 @@
 <Textfield bind:value={value1} label="Number" id="input1" type="number" on:change={handleChange1} on:blur={handleBlur}/>
 <Textfield bind:value={value2} label="Number" id="input2" type="number" on:change={handleChange2} on:blur={handleBlur}
 />
-<slot {value1} {value2}><p>The sum is {value1 + value2}</p></slot>
+{#if children}{@render children({ value1, value2, })}{:else}<p>The sum is {value1 + value2}</p>{/if}
