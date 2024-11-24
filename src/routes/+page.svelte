@@ -26,9 +26,4 @@
 		padding: 1em;
 		margin: 1em 0;
 	}
-
-	.purple {
-		color: purple;
-		font-weight: bold;
-	}
 </style>
