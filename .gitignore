@@ -131,3 +131,6 @@ dist
 
 build
 .svelte-kit
+
+ios
+android
