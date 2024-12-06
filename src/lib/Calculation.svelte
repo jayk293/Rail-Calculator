@@ -7,13 +7,14 @@
    */
 
   /** @type {Props} */
-  let { value1 = $bindable(0), value2 = $bindable(0), children } = $props();
+  let { value1 = $bindable(), value2 = $bindable(), children } = $props();
 </script>
 
 <input
   id="number-input1"
   type="number"
   bind:value={value1}
+  placeholder="Enter number..."
   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 />
 
@@ -21,6 +22,7 @@
   id="number-input2"
   type="number"
   bind:value={value2}
+  placeholder="Enter number..."
   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 />
 
