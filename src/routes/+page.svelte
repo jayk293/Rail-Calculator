@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<h1>Ali Grice's Rail Calculator</h1>
+	<h1 class="title">Ali Grice's Rail Calculator</h1>
 	<div class="example">
 		<App />
 	</div>
@@ -14,6 +14,15 @@
 		max-width: 600px;
 		margin: 0 auto;
 		padding: 1em;
+	}
+
+	.title {
+		text-align: center;
+		color: #333;
+		font-size: 2.5em;
+		margin-bottom: 1em;
+		border-bottom: 2px solid #007bff;
+		padding-bottom: 0.5em;
 	}
 
 	.example {
