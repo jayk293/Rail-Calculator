@@ -15,9 +15,27 @@
 </script>
 
 <nav class="tab-nav">
-  <button class="tab-button" on:click={() => (activeTab = "Plus")}>+</button>
-  <button class="tab-button" on:click={() => (activeTab = "Minus")}>-</button>
-  <button class="tab-button" on:click={() => (activeTab = "Powers")}>^</button>
+  <button
+    class="tab-button"
+    onclick={() => (activeTab = "Plus")}
+    class:active={activeTab === "Plus"}
+  >
+    +
+  </button>
+  <button
+    class="tab-button"
+    onclick={() => (activeTab = "Minus")}
+    class:active={activeTab === "Minus"}
+  >
+    -
+  </button>
+  <button
+    class="tab-button"
+    onclick={() => (activeTab = "Powers")}
+    class:active={activeTab === "Powers"}
+  >
+    ^
+  </button>
 </nav>
 
 <main class="content">
@@ -37,15 +55,18 @@
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 10px 0 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .tab-button {
     background-color: #e0e0e0;
     border: none;
-    padding: 10px;
-    border-radius: 50%;
+    padding: 10px 15px;
+    border-radius: 30px 30px 0 0;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
   }
 
   .tab-button:hover {
@@ -55,6 +76,19 @@
   .tab-button.active {
     background-color: #007bff;
     color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tab-button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: white;
+    z-index: -1;
   }
 
   main {
