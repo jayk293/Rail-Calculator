@@ -29,3 +29,15 @@
   <p>
     The sum is {value1 + value2}
   </p>{/if}
+
+<style>
+  input[type="number"] {
+    -webkit-appearance: textfield;
+    appearance: textfield;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
