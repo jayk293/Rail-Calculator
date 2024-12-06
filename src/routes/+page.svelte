@@ -1,5 +1,5 @@
 <script>
-	import App from '$lib/App.svelte';
+	import App from "$lib/App.svelte";
 </script>
 
 <main>
@@ -10,11 +10,11 @@
 
 	<h1>Ali Grice's Rail Calculator</h1>
 	<div class="example">
-		<App />	
+		<App />
 	</div>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
 		max-width: 600px;
 		margin: 0 auto;

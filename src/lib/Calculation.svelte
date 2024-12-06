@@ -1,7 +1,4 @@
-<script lang="js">
-    import Textfield from '@smui/textfield';
-	import { onMount } from 'svelte';
-
+<script lang="ts">
   /**
    * @typedef {Object} Props
    * @property {number} [value1]
@@ -11,83 +8,24 @@
 
   /** @type {Props} */
   let { value1 = $bindable(0), value2 = $bindable(0), children } = $props();
-
-    function handleChange1(event) {
-        const newValue = event.target.value;
-        console.log('Value 1:', value1);
-
-        // Custom validation for numbers only
-        if (/^-?\d+$/.test(newValue)) {
-            value1 = newValue;
-        }
-  }
-
-  function handleChange2(event) {
-    const newValue = event.target.value;
-    console.log('Value 2:', value2);
-
-    // Custom validation for numbers only
-    if (/^-?\d+$/.test(newValue)) {
-      value2 = newValue;
-    }
-  }
-
-  function handleBlur() {
-    console.log('Value 1:', value1);
-    console.log('Value 2:', value2);
-  }
-
-  onMount(() => {
-    const inputElement1 = document.querySelector('#input1');
-    const inputElement2 = document.querySelector('#input2');
-    
-    if (inputElement1 && inputElement2) {
-      // Handle mobile browsers
-      inputElement1.addEventListener('input', (event) => {
-        const newValue = event.target.value;
-        
-        // Custom validation for numbers only
-        if (/^-?\d+$/.test(newValue)) {
-          event.target.value = newValue;
-        } else {
-          event.preventDefault();
-        }
-      });
-
-      inputElement2.addEventListener('input', (event) => {
-        const newValue = event.target.value;
-        
-        // Custom validation for numbers only
-        if (/^-?\d+$/.test(newValue)) {
-          event.target.value = newValue;
-        } else {
-          event.preventDefault();
-        }
-      });
-      
-      // Add event listener for paste event
-      inputElement1.addEventListener('paste', (event) => {
-        const pastedValue = event.clipboardData.getData('text');
-        
-        // Custom validation for numbers only
-        if (/^-?\d+$/.test(pastedValue)) {
-          event.preventDefault();
-        }
-      });
-
-      inputElement2.addEventListener('paste', (event) => {
-        const pastedValue = event.clipboardData.getData('text');
-        
-        // Custom validation for numbers only
-        if (/^-?\d+$/.test(pastedValue)) {
-          event.preventDefault();
-        }
-      });
-    }
-  });
 </script>
 
-<Textfield bind:value={value1} label="Number" id="input1" type="number" on:change={handleChange1} on:blur={handleBlur}/>
-<Textfield bind:value={value2} label="Number" id="input2" type="number" on:change={handleChange2} on:blur={handleBlur}
+<input
+  id="number-input1"
+  type="number"
+  bind:value={value1}
+  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 />
-{#if children}{@render children({ value1, value2, })}{:else}<p>The sum is {value1 + value2}</p>{/if}
+
+<input
+  id="number-input2"
+  type="number"
+  bind:value={value2}
+  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+/>
+
+{#if children}{@render children({ value1, value2 })}
+{:else}
+  <p>
+    The sum is {value1 + value2}
+  </p>{/if}
