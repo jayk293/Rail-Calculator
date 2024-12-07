@@ -9,8 +9,8 @@
   function minus(value1: number, value2: number) {
     return value1 - value2;
   }
-  function power(value1: number, value2: number) {
-    return Math.pow(value1, value2);
+  function multipy(value1: number, value2: number) {
+    return value1 * value2;
   }
 </script>
 
@@ -31,20 +31,20 @@
   </button>
   <button
     class="tab-button"
-    onclick={() => (activeTab = "Powers")}
-    class:active={activeTab === "Powers"}
+    onclick={() => (activeTab = "Multiply")}
+    class:active={activeTab === "Multiply"}
   >
-    ^
+    x
   </button>
 </nav>
 
 <main class="content">
   {#if activeTab === "Plus"}
-    <Calculation calculate={addition}></Calculation>
+    <Calculation calculate={addition} />
   {:else if activeTab === "Minus"}
-    <Calculation calculate={minus}></Calculation>
-  {:else if activeTab === "Powers"}
-    <Calculation calculate={power} />
+    <Calculation calculate={minus} />
+  {:else if activeTab === "Multiply"}
+    <Calculation calculate={multipy} />
   {/if}
 </main>
 

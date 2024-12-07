@@ -10,6 +10,10 @@
 
   let { calculate } = $props();
 
+  function clear() {
+    value1 = "";
+    value2 = "";
+  }
   let value1 = $state();
   let value2 = $state();
   let result = $state();
@@ -31,12 +35,20 @@
   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
 />
 
-<button
-  onclick={() => (result = calculate(value1, value2))}
-  class="mt-4 w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
->
-  Calculate Sum
-</button>
+<div>
+  <button
+    onclick={() => (result = calculate(value1, value2))}
+    class="mt-4 w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
+  >
+    Calculate
+  </button>
+  <button
+    onclick={clear}
+    class="mt-4 w-full px-4 py-3 bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
+  >
+    Clear
+  </button>
+</div>
 
 <div class="bg-white dark:bg-gray-900 p-6 mt-8 rounded-lg shadow-md">
   <p class="text-2xl font-bold text-center text-gray-800 dark:text-white">
