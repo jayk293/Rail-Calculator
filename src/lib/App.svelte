@@ -1,7 +1,8 @@
 <script lang="ts">
   import Calculation from "./Calculation.svelte";
 
-  let activeTab = $state("Plus");
+  let tabs = ["+", "-", "x"];
+  let activeTab = $state("+");
 
   function addition(value1: number, value2: number) {
     return value1 + value2;
@@ -9,42 +10,30 @@
   function minus(value1: number, value2: number) {
     return value1 - value2;
   }
-  function multipy(value1: number, value2: number) {
+  function multiply(value1: number, value2: number) {
     return value1 * value2;
   }
 </script>
 
 <nav class="tab-nav">
-  <button
-    class="tab-button"
-    onclick={() => (activeTab = "Plus")}
-    class:active={activeTab === "Plus"}
-  >
-    +
-  </button>
-  <button
-    class="tab-button"
-    onclick={() => (activeTab = "Minus")}
-    class:active={activeTab === "Minus"}
-  >
-    -
-  </button>
-  <button
-    class="tab-button"
-    onclick={() => (activeTab = "Multiply")}
-    class:active={activeTab === "Multiply"}
-  >
-    x
-  </button>
+  {#each tabs as tab}
+    <button
+      class="tab-button"
+      onclick={() => (activeTab = tab)}
+      class:active={activeTab === tab}
+    >
+      {tab}
+    </button>
+  {/each}
 </nav>
 
 <main class="content">
-  {#if activeTab === "Plus"}
+  {#if activeTab === "+"}
     <Calculation calculate={addition} />
-  {:else if activeTab === "Minus"}
+  {:else if activeTab === "-"}
     <Calculation calculate={minus} />
-  {:else if activeTab === "Multiply"}
-    <Calculation calculate={multipy} />
+  {:else if activeTab === "x"}
+    <Calculation calculate={multiply} />
   {/if}
 </main>
 
