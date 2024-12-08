@@ -1,13 +1,4 @@
 <script lang="ts">
-  /**
-   * @typedef {Object} Props
-   * @property {number} [value1]
-   * @property {number} [value2]
-   * @property {import('svelte').Snippet<[any]>} [children]
-   */
-
-  /** @type {Props} */
-
   let { calculate } = $props();
 
   function clear() {
