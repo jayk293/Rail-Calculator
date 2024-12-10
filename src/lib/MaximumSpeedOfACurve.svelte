@@ -36,30 +36,43 @@
 </script>
 
 <h2 class="text-3xl font-bold text-center mb-4">Maximum Speed on a Curve</h2>
+<div class="container">
+  <div class="input-group">
+    <label for="number-input1" class="label">Curve Radius</label>
+    <input
+      id="number-input1"
+      type="number"
+      bind:value={value1}
+      placeholder="Enter number..."
+      class="input-field"
+    />
+    <span class="unit">m</span>
+  </div>
 
-<input
-  id="number-input1"
-  type="number"
-  bind:value={value1}
-  placeholder="Enter number..."
-  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-500 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-/>
+  <div class="input-group">
+    <label for="number-input2" class="label">Cant</label>
+    <input
+      id="number-input2"
+      type="number"
+      bind:value={value2}
+      placeholder="Enter number..."
+      class="input-field"
+    />
+    <span class="unit">m</span>
+  </div>
 
-<input
-  id="number-input2"
-  type="number"
-  bind:value={value2}
-  placeholder="Enter number..."
-  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-/>
-
-<input
-  id="number-input3"
-  type="number"
-  bind:value={value3}
-  placeholder="Enter number..."
-  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-/>
+  <div class="input-group">
+    <label for="number-input3" class="label">Maximum Cant Deficiency</label>
+    <input
+      id="number-input3"
+      type="number"
+      bind:value={value3}
+      placeholder="Enter number..."
+      class="input-field"
+    />
+    <span class="unit">m</span>
+  </div>
+</div>
 <div class="flex justify-center space-x-4">
   <button
     onclick={clear}
@@ -101,5 +114,31 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    width: 150px;
+    margin-right: 8px;
+  }
+
+  .input-field {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .unit {
+    margin-left: 8px;
   }
 </style>

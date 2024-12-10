@@ -36,29 +36,37 @@
 
 <h2 class="text-3xl font-bold text-center mb-4">Cant</h2>
 
-<input
-  id="number-input1"
-  type="number"
-  bind:value={value1}
-  placeholder="Enter number..."
-  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-500 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-/>
+<div class="grid grid-cols-1 gap-4 mt-8">
+  <div class="flex items-center">
+    <input
+      id="number-input1"
+      type="number"
+      bind:value={value1}
+      class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-500 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+    />
+    <span class="ml-2 text-sm">kph</span>
+  </div>
 
-<input
-  id="number-input2"
-  type="number"
-  bind:value={value2}
-  placeholder="Enter number..."
-  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-/>
+  <div class="flex items-center">
+    <input
+      id="number-input2"
+      type="number"
+      bind:value={value2}
+      class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+    />
+    <span class="ml-2 text-sm">m</span>
+  </div>
 
-<input
-  id="number-input3"
-  type="number"
-  bind:value={value3}
-  placeholder="Enter number..."
-  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-/>
+  <div class="flex items-center">
+    <input
+      id="number-input3"
+      type="number"
+      bind:value={value3}
+      class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+    />
+    <span class="ml-2 text-sm">mm</span>
+  </div>
+</div>
 
 <div class="flex justify-center space-x-4">
   <button
