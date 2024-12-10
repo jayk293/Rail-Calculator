@@ -1,8 +1,9 @@
 <script lang="ts">
   import Calculation from "./Calculation.svelte";
+  import Cant from "./Cant.svelte";
   import MaximumSpeedOfACurve from "./MaximumSpeedOfACurve.svelte";
 
-  let tabs = ["+", "-", "x"];
+  let tabs = ["+", "-", "x", "/"];
   let activeTab = $state("+");
 
   function addition(value1: number, value2: number) {
@@ -30,10 +31,12 @@
 
 <main class="content">
   {#if activeTab === "+"}
-    <MaximumSpeedOfACurve calculate={addition} />
+    <MaximumSpeedOfACurve />
   {:else if activeTab === "-"}
-    <Calculation calculate={minus} />
+    <Cant />
   {:else if activeTab === "x"}
+    <Calculation calculate={multiply} />
+  {:else if activeTab === "/"}
     <Calculation calculate={multiply} />
   {/if}
 </main>

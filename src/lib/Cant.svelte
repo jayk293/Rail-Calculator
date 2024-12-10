@@ -2,40 +2,39 @@
   function clear() {
     value1 = undefined;
     value2 = undefined;
-    value3 = undefined;
   }
 
-  function speed(value: number = 0) {
-    return value / 3.6;
-  }
-  function maxCurve(
+  function curveEquilibrimCant(
+    speedAsKph: number = 0,
     curveRadius: number = 0,
-    cant: number = 0,
-    maxCantDefiency: number = 0,
   ) {
-    return 0.29 * Math.sqrt(curveRadius * (cant + maxCantDefiency));
+    return (11.82 * Math.pow(speedAsKph, 2)) / curveRadius;
   }
 
+  function cantDefiency(curveEquilibriumCant: number = 0, cant: number = 0) {
+    return curveEquilibriumCant - cant;
+  }
   function roundToNearestDecimal(value) {
     return Number(value.toFixed(1));
   }
   let value1 = $state(undefined);
   let value2 = $state(undefined);
   let value3 = $state(undefined);
-  let maximumCurveResult: number | undefined = $derived.by(() => {
-    if (value1 !== undefined && value2 !== undefined && value3 !== undefined) {
-      return roundToNearestDecimal(maxCurve(value1, value2, value3));
+  let curveEquilibrimCantResult: number | undefined = $derived.by(() => {
+    if (value1 !== undefined && value2 !== undefined) {
+      return roundToNearestDecimal(curveEquilibrimCant(value1, value2));
     }
   });
-
-  let speedResult: number | undefined = $derived.by(() => {
-    if (maximumCurveResult !== undefined) {
-      return roundToNearestDecimal(speed(maximumCurveResult));
+  let cantDefiencyResult: number | undefined = $derived.by(() => {
+    if (curveEquilibrimCantResult !== undefined && value3 !== undefined) {
+      return roundToNearestDecimal(
+        cantDefiency(curveEquilibrimCantResult, value3),
+      );
     }
   });
 </script>
 
-<h2 class="text-3xl font-bold text-center mb-4">Maximum Speed on a Curve</h2>
+<h2 class="text-3xl font-bold text-center mb-4">Cant</h2>
 
 <input
   id="number-input1"
@@ -60,6 +59,7 @@
   placeholder="Enter number..."
   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
 />
+
 <div class="flex justify-center space-x-4">
   <button
     onclick={clear}
@@ -72,14 +72,15 @@
 <div
   class="bg-white dark:bg-gray-900 p-6 mt-8 rounded-lg shadow-md text-2xl font-bold text-center text-gray-800 dark:text-white"
 >
-  <p>Maximum Curve:</p>
-  <p>{maximumCurveResult}</p>
+  <p>Curve Equilibrium Cant:</p>
+  <p>{curveEquilibrimCantResult}</p>
 </div>
+
 <div
   class="bg-white dark:bg-gray-900 p-6 mt-8 rounded-lg shadow-md text-2xl font-bold text-center text-gray-800 dark:text-white"
 >
-  <p>Speed</p>
-  <p>{speedResult}</p>
+  <p>Cant Deficiency:</p>
+  <p>{cantDefiencyResult}</p>
 </div>
 
 <style>
