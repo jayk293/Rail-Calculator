@@ -42,13 +42,11 @@
   </button>
 </div>
 
-<div class="bg-white dark:bg-gray-900 p-6 mt-8 rounded-lg shadow-md">
-  <p class="text-2xl font-bold text-center text-gray-800 dark:text-white">
-    Result:
-  </p>
-  <p class="text-2xl font-bold text-center text-gray-800 dark:text-white">
-    {result}
-  </p>
+<div
+  class="bg-white dark:bg-gray-900 p-6 mt-8 rounded-lg shadow-md text-2xl font-bold text-center text-gray-800 dark:text-white"
+>
+  <p>Result:</p>
+  <p>{result}</p>
 </div>
 
 <style>
