@@ -32,6 +32,10 @@
     "@capacitor/android": "^3.7.0",
     "@capacitor/cli": "^3.7.0",
     "@capacitor/core": "^3.7.0",
-    "@capacitor/ios": "^3.7.0"
+    "@capacitor/ios": "^3.7.0",
+    "@popperjs/core": "^2.11.8",
+    "flowbite": "^2.5.2",
+    "flowbite-svelte": "^0.47.4",
+    "tailwind-merge": "^2.5.5"
   }
 }
