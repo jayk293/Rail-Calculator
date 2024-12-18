@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Button } from "flowbite-svelte";
+
   function clear() {
     value1 = undefined;
     value2 = undefined;
@@ -74,12 +76,13 @@
 </div>
 
 <div class="flex justify-center space-x-4">
-  <button
+  <Button
     onclick={clear}
-    class="mt-4 w-full px-4 py-3 bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
+    color="red"
+    class="mt-4 w-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
   >
     Clear
-  </button>
+  </Button>
 </div>
 
 <div

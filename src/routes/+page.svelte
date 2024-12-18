@@ -9,11 +9,11 @@
 	} from "flowbite-svelte";
 </script>
 
-<Navbar let:hidden let:toggle>
+<Navbar let:hidden>
 	<NavBrand href="/">
 		<img
 			src="https://static.wixstatic.com/media/5bed0d_1396d5588fc34805bf78a10e6e4ffee1~mv2.png/v1/fill/w_66,h_66,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5bed0d_1396d5588fc34805bf78a10e6e4ffee1~mv2.png"
-			class="mr-3 h-6 sm:h-9"
+			class="mr-1 h-6 sm:h-9"
 			alt="Flowbite Logo"
 		/>
 		<span
