@@ -100,16 +100,6 @@
 </div>
 
 <style>
-  button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    background-color: #e0e0e0; /* Light gray background */
-    color: #666; /* Darker text color */
-  }
-
-  button:disabled:hover {
-    background-color: #d9d9d9; /* Slightly darker on hover */
-  }
   input[type="number"] {
     -webkit-appearance: textfield;
     appearance: textfield;

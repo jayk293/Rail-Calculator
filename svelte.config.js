@@ -7,8 +7,14 @@ const config = {
   kit: {
     adapter: adapter(),
     paths: {
-      base: process.env.NODE_ENV === "production" ? "/rail-calculator" : "",
+      base: '/rail-calculator',
     },
+    prerender: {
+      handleHttpError: ({ path }) => {
+        if (path === '/') return; // Ignore errors for the root path
+        throw new Error(`Prerendering failed for ${path}`);
+      }
+    }
   },
   preprocess: vitePreprocess()
 };
