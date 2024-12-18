@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Button } from "flowbite-svelte";
+
   function clear() {
     value1 = undefined;
     value2 = undefined;
@@ -35,46 +37,52 @@
 </script>
 
 <h2 class="text-3xl font-bold text-center mb-4">Cant</h2>
-
-<div class="grid grid-cols-1 gap-4 mt-8">
-  <div class="flex items-center">
+<div class="container">
+  <div class="input-group">
+    <label for="number-input1" class="label">Train Speed</label>
     <input
       id="number-input1"
       type="number"
       bind:value={value1}
-      class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-500 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+      placeholder="Enter number..."
+      class="input-field"
     />
-    <span class="ml-2 text-sm">kph</span>
+    <span class="unit">kph</span>
   </div>
 
-  <div class="flex items-center">
+  <div class="input-group">
+    <label for="number-input2" class="label">Curve Radius</label>
     <input
       id="number-input2"
       type="number"
       bind:value={value2}
-      class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+      placeholder="Enter number..."
+      class="input-field"
     />
-    <span class="ml-2 text-sm">m</span>
+    <span class="unit">m</span>
   </div>
 
-  <div class="flex items-center">
+  <div class="input-group">
+    <label for="number-input3" class="label">Applied Cant</label>
     <input
       id="number-input3"
       type="number"
       bind:value={value3}
-      class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-0 focus:ring-blue-200 text-base font-medium outline-none transition duration-100 ease-in-out transform bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+      placeholder="Enter number..."
+      class="input-field"
     />
-    <span class="ml-2 text-sm">mm</span>
+    <span class="unit">mm</span>
   </div>
 </div>
 
 <div class="flex justify-center space-x-4">
-  <button
+  <Button
     onclick={clear}
-    class="mt-4 w-full px-4 py-3 bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
+    color="red"
+    class="mt-4 w-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 text-white rounded-lg font-semibold text-base transition duration-500 ease-in-out transform"
   >
     Clear
-  </button>
+  </Button>
 </div>
 
 <div
@@ -110,5 +118,32 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    width: 150px;
+    margin-right: 8px;
+  }
+
+  .input-field {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .unit {
+    margin-left: 8px;
   }
 </style>
